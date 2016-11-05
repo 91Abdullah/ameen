@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Karachi',
 
     /*
     |--------------------------------------------------------------------------
@@ -166,7 +166,10 @@ return [
         /*
          * Package Service Providers...
          */
-
+        anlutro\LaravelSettings\ServiceProvider::class,
+        Ixudra\Curl\CurlServiceProvider::class,
+        Orchestra\Parser\XmlServiceProvider::class,
+        XmlResponse\XmlResponseServiceProvider::class,
         //
 
         /*
@@ -177,7 +180,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -227,6 +230,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Setting' => 'anlutro\LaravelSettings\Facade',
+        'Curl' => Ixudra\Curl\Facades\Curl::class,
+        'XmlParser' => Orchestra\Parser\Xml\Facade::class,
 
     ],
 

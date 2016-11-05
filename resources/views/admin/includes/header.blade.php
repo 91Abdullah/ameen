@@ -4,8 +4,8 @@
     <div class="page-header-inner">
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            <a href="index.html">
-                <img src="{{ URL::to('assets/admin/layout/img/logo.png') }}" alt="logo" class="logo-default"/>
+            <a href="{{ route('admin.dashboard') }}">
+                <img style="width: auto; height: 30px;" src="{{ URL::to('assets/admin/layout/img/logo.png') }}" alt="logo" class="logo-default"/>
             </a>
             <div class="menu-toggler sidebar-toggler hide">
             </div>
@@ -20,7 +20,7 @@
             <ul class="nav navbar-nav pull-right">
                 <!-- BEGIN NOTIFICATION DROPDOWN -->
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-                <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                {{--<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <i class="icon-bell"></i>
 					<span class="badge badge-default">
@@ -313,46 +313,19 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li>--}}
                 <!-- END TODO DROPDOWN -->
                 <!-- BEGIN USER LOGIN DROPDOWN -->
                 <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                        <img alt="" class="img-circle" src="{{ URL::to('assets/admin/layout/img/avatar3_small.jpg') }}"/>
 					<span class="username username-hide-on-mobile">
-					Nick </span>
+					{{ Auth::user()->name }} </span>
                         <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-default">
                         <li>
-                            <a href="extra_profile.html">
-                                <i class="icon-user"></i> My Profile </a>
-                        </li>
-                        <li>
-                            <a href="page_calendar.html">
-                                <i class="icon-calendar"></i> My Calendar </a>
-                        </li>
-                        <li>
-                            <a href="inbox.html">
-                                <i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
-							3 </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page_todo.html">
-                                <i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
-							7 </span>
-                            </a>
-                        </li>
-                        <li class="divider">
-                        </li>
-                        <li>
-                            <a href="extra_lock.html">
-                                <i class="icon-lock"></i> Lock Screen </a>
-                        </li>
-                        <li>
-                            <a href="login.html">
+                            <a href="{{ route('admin.logout') }}">
                                 <i class="icon-key"></i> Log Out </a>
                         </li>
                     </ul>

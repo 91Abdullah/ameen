@@ -48,23 +48,57 @@
                     <span class="title">Calls</span>
                 </a>
             </li>
-            <li class="{{ Request::is('messages') ? 'active' : '' }}">
-                <a href="{{ route('admin.messages') }}">
+            <li class="{{ Request::is('messages/*') ? 'active' : '' }}">
+                <a href="#">
                     <i class="icon-envelope"></i>
                     <span class="title">Messages</span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="{{ Request::is('messages/sent') ? 'active' : '' }}">
+                        <a href="{{ route('admin.messages.sent') }}">
+                            <i class="icon-envelope"></i>
+                            <span class="title">Sent</span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('messages/recieved') ? 'active' : '' }}">
+                        <a href="{{ route('admin.messages.recieved') }}">
+                            <i class="icon-folder"></i>
+                            <span class="title">Recieved</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li class="{{ Request::is('emails') || Request::is('emails/*') ? 'active' : '' }}">
-                <a href="{{ route('admin.emails') }}">
+            <li class="{{ Request::is('imap') || Request::is('imap/*') ? 'active' : '' }}">
+                <a href="{{ route('admin.imap') }}">
                     <i class="icon-folder"></i>
                     <span class="title">Emails</span>
                 </a>
             </li>
-            <li class="{{ Request::is('preferences') ? 'active' : '' }}">
-                <a href="{{ route('admin.preferences') }}">
+            <li class="{{ Request::is('preferences/*') ? 'active' : '' }}">
+                <a href="{{ route('admin.preferences.mail') }}">
                     <i class="icon-wrench"></i>
                     <span class="title">Preferences</span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="{{ Request::is('preferences/mail') ? 'active' : '' }}">
+                        <a href="{{ route('admin.preferences.mail') }}">
+                            <i class="icon-folder"></i>
+                            <span class="title">Mail</span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('preferences/message') ? 'active' : '' }}">
+                        <a href="{{ route('admin.preferences.messageIndex') }}">
+                            <i class="icon-envelope"></i>
+                            <span class="title">Message</span>
+                        </a>
+                    </li>
+                    <li class="{{ Request::is('preferences/user') ? 'active' : '' }}">
+                        <a href="{{ route('admin.preferences.user') }}">
+                            <i class="icon-user"></i>
+                            <span class="title">Users</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
         </ul>
         <!-- END SIDEBAR MENU -->

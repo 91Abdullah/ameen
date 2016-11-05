@@ -35,19 +35,16 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="{{ route('admin.emails') }}">Inbox</a>
+            <a href="{{ route('admin.imap') }}">Inbox</a>
         </li>
     </ul>
 </div>
 <!-- END PAGE HEADER-->
 <div class="row inbox">
-    <div class="col-md-2">
-        @include('admin.emails.list')
-    </div>
-    <div class="col-md-10">
+    <div class="col-md-12">
         <div class="inbox-header inbox-view-header">
             <h1 class="pull-left">{{ $message->subject }}
-                <a href="{{ route('admin.emails') }}">Inbox </a>
+                <a href="{{ route('admin.imap') }}">Inbox </a>
             </h1>
             <div class="pull-right">
                 <i class="fa fa-print"></i>
@@ -60,39 +57,7 @@
                     <span>&#60;{{ $message->fromAddress }}&#62; </span>
                     to <span class="bold">{{ $message->toString }} </span>on {{ $message->date }}
                 </div>
-                <div class="col-md-5 inbox-info-btn">
-                    <div class="btn-group">
-                        <a href="{{ route('admin.emails.reply', $message->id) }}" data-messageid="{{ $message->id }}" class="btn blue reply-btn">
-                            <i class="fa fa-reply"></i> Reply </a>
-                        <a class="btn blue dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="{{ route('admin.emails.reply', $message->id) }}" data-messageid="{{ $message->id }}" class="reply-btn">
-                                    <i class="fa fa-reply"></i> Reply </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('admin.emails.forward', $message->id) }}">
-                                    <i class="fa fa-arrow-right reply-btn"></i> Forward </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="fa fa-print"></i> Print </a>
-                            </li>
-                            <li class="divider">
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="fa fa-ban"></i> Spam </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('admin.emails.delete', $message->id) }}">
-                                    <i class="fa fa-trash-o"></i> Delete </a>
-                            </li>
-                            <li>
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="inbox-view">
@@ -103,16 +68,19 @@
             @endif
         </div>
         <hr>
-        <div class="inbox-attached">
-            <div class="margin-bottom-15">
+        @if ($files = $message->getAttachments())
+            <div class="inbox-attached">
+                <div class="margin-bottom-15">
             <span>
-            3 attachments — </span>
-                <a href="javascript:;">
-                    Download all attachments </a>
-                <a href="javascript:;">
-                    View all images </a>
+            {{ count($files) }} attachments -</span>
+                    @foreach($files as $downloadFile)
+                        <a href="">
+                            <img src="{{ public_path('attachments') . DIRECTORY_SEPARATOR . $downloadFile->name }}" alt="">
+                        </a>
+                    @endforeach
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 </div>
 
@@ -159,7 +127,7 @@
 <!-- END: Page level plugins -->
 <script>
     $(document).ready(function() {
-
+        var token = "{{ csrf_token() }}";
     });
 </script>
 @endsection

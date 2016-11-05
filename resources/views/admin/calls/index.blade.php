@@ -22,4 +22,56 @@
             </div>
         </div-->
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box red">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-phone"></i> Call Recordings
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Call Date</th>
+                                    <th>Source</th>
+                                    <th>Destination</th>
+                                    <th>Disposition</th>
+                                    <th>Duration (secs)</th>
+                                    <th>Play</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($cdrs as $index => $cdr)
+                                    <tr>
+                                        <td>{{ $cdr->id }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($cdr->calldate)->diffForHumans() }}</td>
+                                        <td>{{ $cdr->src }}</td>
+                                        <td>{{ $cdr->dst }}</td>
+                                        <td>
+                                            @if ($cdr->disposition == "ANSWERED")
+                                                <span class="label label-success label-sm">{{ $cdr->disposition }}</span>
+                                            @else
+                                                <span class="label label-warning label-sm">{{ $cdr->disposition }}</span>
+                                            @endif
+                                        </td>
+                                        <td>{{ $cdr->duration }}</td>
+                                        <td>
+                                            @if ($cdr->recordingfile)
+                                                <a href="{{ $cdr->recordingfile }}"><i class="fa fa-play-circle-o fa-2x"></i></a>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {{ $cdrs->links() }}
+        </div>
+    </div>
 @endsection

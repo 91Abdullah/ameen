@@ -23,7 +23,7 @@
     </div-->
 
 </div>
-{!! Form::model($preferences, ['type' => 'patch', 'route' => 'admin.preferences']) !!}
+{!! Form::model($preferences, ['type' => 'patch', 'route' => 'admin.preferences.mail']) !!}
 <div class="form-group">
     <label for="host">Host</label>
     {!! Form::input('text', 'host', null, ['class' => 'form-control']) !!}

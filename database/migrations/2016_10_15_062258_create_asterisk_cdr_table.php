@@ -48,6 +48,6 @@ class CreateAsteriskCdrTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('cdrs');
     }
 }

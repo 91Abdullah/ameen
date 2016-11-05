@@ -3,7 +3,8 @@ Login page
 ***/
 /* bg color */
 .login {
-  background-color: #364150 !important;
+  /*background-color: #364150 !important;*/
+  background-color: #fdfdfd  !important;
 }
 
 .login .logo {
