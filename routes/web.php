@@ -26,6 +26,8 @@ Route::get('/test/apiTest', function() {
     return dd($response);
 });
 
+Route::get('/dbTest', ['as' => 'dbtest', 'uses' => 'TestController@dbtest']);
+
 
 Route::group(['middleware' => 'auth'], function() {
 
@@ -34,6 +36,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'DashboardController@index']);
 
     Route::get('/calls', ['as' => 'admin.calls', 'uses' => 'CallController@index']);
+    Route::get('/getRecording', ['as' => 'admin.getFile', 'uses' => 'CallController@getFile']);
+    Route::get('/audio/{filename}', ['as' => 'admin.getAudio', 'uses' => 'CallController@getAudio']);
 
 //Messages
 

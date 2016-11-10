@@ -14,7 +14,8 @@
         "anlutro/l4-settings": "^0.4.9",
         "ixudra/curl": "6.*",
         "orchestra/parser": "~3.0",
-        "jailtonsc/laravel-response-xml": "^1.1"
+        "jailtonsc/laravel-response-xml": "^1.1",
+        "phanan/remote": "2.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -1,5 +1,9 @@
 @extends('admin.layouts.master')
 
+@section('styles')
+    <link rel="stylesheet" href="{{ URL::to('assets/global/plugins/bootstrap-toastr/toastr.min.css') }}">
+@endsection
+
 @section('content')
     <!-- BEGIN PAGE HEADER-->
     <h3 class="page-title">
@@ -47,7 +51,7 @@
                             <tbody>
                                 @foreach($cdrs as $index => $cdr)
                                     <tr>
-                                        <td>{{ $cdr->id }}</td>
+                                        <td>{{ $cdr->uniqueid }}</td>
                                         <td>{{ \Carbon\Carbon::parse($cdr->calldate)->diffForHumans() }}</td>
                                         <td>{{ $cdr->src }}</td>
                                         <td>{{ $cdr->dst }}</td>
@@ -61,7 +65,7 @@
                                         <td>{{ $cdr->duration }}</td>
                                         <td>
                                             @if ($cdr->recordingfile)
-                                                <a href="{{ $cdr->recordingfile }}"><i class="fa fa-play-circle-o fa-2x"></i></a>
+                                                <a class="recording-link" data-date="{{ $cdr->calldate }}" data-id="{{ $cdr->uniqueid }}" data-recording="{{ $cdr->recordingfile }}"><i class="fa fa-play-circle-o fa-2x"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -74,4 +78,31 @@
             {{ $cdrs->links() }}
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script type="text/javascript" src="{{ URL::to('assets/global/plugins/bootstrap-toastr/toastr.min.js') }}"></script>
+    <script>
+        $(".recording-link").on("click", function (e) {
+            e.preventDefault();
+            var em = $(this);
+            $.ajax({
+                type: "GET",
+                url: "{{ route('admin.getFile') }}",
+                dataType: "JSON",
+                data: {
+                    filename: $(this).data("recording"),
+                    id: $(this).data("id"),
+                    date: $(this).data("date")
+                },
+                success: function (data) {
+                    console.log(data);
+                    em.replaceWith("<audio controls><source src='"+ data +"' type='audio/wav'>Your browser does not support the audio element.</audio>")
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        })
+    </script>
 @endsection

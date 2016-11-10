@@ -2,25 +2,26 @@
 
 
 @section('styles')
-        <!-- BEGIN PAGE LEVEL STYLES -->
-<link href="{{ URL::to('assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css') }}" rel="stylesheet" type="text/css"/>
-<link href="{{ URL::to('assets/global/plugins/fancybox/source/jquery.fancybox.css') }}" rel="stylesheet"/>
-<!-- BEGIN:File Upload Plugin CSS files-->
-<link href="{{ URL::to('assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css') }}" rel="stylesheet"/>
-<link href="{{ URL::to('assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css') }}" rel="stylesheet"/>
-<link href="{{ URL::to('assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css') }}" rel="stylesheet"/>
-<link href="{{ URL::to('assets/global/plugins/pace/themes/pace-theme-barber-shop.css') }}" rel="stylesheet"/>
-<!-- END:File Upload Plugin CSS files-->
-<!-- END PAGE LEVEL STYLES -->
-<!-- BEGIN PAGE LEVEL STYLES -->
-<link href="{{ URL::to('assets/admin/pages/css/inbox.css') }}" rel="stylesheet" type="text/css"/>
-<!-- END PAGE LEVEL STYLES -->
-<!-- BEGIN THEME STYLES -->
-<link href="{{ URL::to('assets/global/css/components-md.css') }}" id="style_components" rel="stylesheet" type="text/css"/>
-<link href="{{ URL::to('assets/global/css/plugins-md.css') }}" rel="stylesheet" type="text/css"/>
-<link href="{{ URL::to('assets/admin/layout/css/layout.css') }}" rel="stylesheet" type="text/css"/>
-<link id="style_color" href="{{ URL::to('assets/admin/layout/css/themes/darkblue.css') }}" rel="stylesheet" type="text/css"/>
-<link href="{{ URL::to('assets/admin/layout/css/custom.css') }}" rel="stylesheet" type="text/css"/>
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="{{ URL::to('assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ URL::to('assets/global/plugins/fancybox/source/jquery.fancybox.css') }}" rel="stylesheet"/>
+    <!-- BEGIN:File Upload Plugin CSS files-->
+    <link href="{{ URL::to('assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css') }}" rel="stylesheet"/>
+    <link href="{{ URL::to('assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css') }}" rel="stylesheet"/>
+    <link href="{{ URL::to('assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css') }}" rel="stylesheet"/>
+    <link href="{{ URL::to('assets/global/plugins/pace/themes/pace-theme-barber-shop.css') }}" rel="stylesheet"/>
+    <!-- END:File Upload Plugin CSS files-->
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="{{ URL::to('assets/admin/pages/css/inbox.css') }}" rel="stylesheet" type="text/css"/>
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="{{ URL::to('assets/global/css/components-md.css') }}" id="style_components" rel="stylesheet" type="text/css"/>
+    <link href="{{ URL::to('assets/global/css/plugins-md.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ URL::to('assets/admin/layout/css/layout.css') }}" rel="stylesheet" type="text/css"/>
+    <link id="style_color" href="{{ URL::to('assets/admin/layout/css/themes/darkblue.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ URL::to('assets/admin/layout/css/custom.css') }}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="{{ URL::to('assets/global/plugins/bootstrap-toastr/toastr.min.css') }}">
 @endsection
 
 @section('content')
@@ -198,79 +199,112 @@
         @endsection
 
         @section('scripts')
-                <!-- BEGIN: Page level plugins -->
-        <script src="{{ URL::to('assets/global/plugins/fancybox/source/jquery.fancybox.pack.js') }}" type="text/javascript"></script>
-        <script src="{{ URL::to('assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js') }}" type="text/javascript"></script>
-        <script src="{{ URL::to('assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js') }}" type="text/javascript"></script>
-        <!-- BEGIN:File Upload Plugin JS files-->
-        <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js') }}"></script>
-        <!-- The Templates plugin is included to render the upload/download listings -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js') }}"></script>
-        <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/vendor/load-image.min.js') }}"></script>
-        <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js') }}"></script>
-        <!-- blueimp Gallery script -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js') }}"></script>
-        <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js') }}"></script>
-        <!-- The basic File Upload plugin -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload.js') }}"></script>
-        <!-- The File Upload processing plugin -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js') }}"></script>
-        <!-- The File Upload image preview & resize plugin -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js') }}"></script>
-        <!-- The File Upload audio preview plugin -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js') }}"></script>
-        <!-- The File Upload video preview plugin -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js') }}"></script>
-        <!-- The File Upload validation plugin -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js') }}"></script>
-        <!-- The File Upload user interface plugin -->
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js') }}"></script>
-        <!-- Pace Plugin -->
-        <script src="{{ URL::to('assets/global/plugins/pace/pace.min.js') }}"></script>
-        <!-- The main application script -->
-        <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
-        <!--[if (gte IE 8)&(lt IE 10)]>
-        <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/cors/jquery.xdr-transport.js') }}"></script>
-        <![endif]-->
-        <!-- END:File Upload Plugin JS files-->
-        <!-- END: Page level plugins -->
-        <script>
-            $(document).ready(function() {
-                var url = "{{ route('admin.imap.getMails') }}";
-                var token = "{{ csrf_token() }}";
-                var baseUrl = "http://server/ameen/public/imap/";
-                var data = {
-                    _token: token
-                };
-                $.ajax({
-                    type: "GET",
-                    url: url,
-                    dataType: "JSON",
-                    data: data,
-                    success: function (data) {
-                        console.log(data);
-                        $.each(data, function (key, value) {
-                            $("#ajaxMessages tbody").append(
-                                '<tr class="unread" data-messageid="' + value.id + '">' +
-                                    '<td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>' +
-                                    '<td class="inbox-small-cells"><i class="fa fa-star"></i></td>' +
-                                    '<td class="view-message hidden-xs"><a href="' + baseUrl + '/' + value.id + '">' + value.fromName + '</a></td>' +
-                                    '<td class="view-message"><a href="'+ baseUrl + value.id +'">'+ value.subject +'</a></td>' +
-                                    '<td class="view-message inbox-small-cells"><i class="fa fa-paperclip"></i></td>' +
-                                    '<td class="view-message text-right">'+ value.date +'</td>' +
-                                '</tr>'
-                            )
-                        })
-                        $(".mail-checkbox").uniform();
-                    },
-                    error: function (data) {
-                        console.log(data);
-                    }
+            <!-- BEGIN: Page level plugins -->
+            <script src="{{ URL::to('assets/global/plugins/fancybox/source/jquery.fancybox.pack.js') }}" type="text/javascript"></script>
+            <script src="{{ URL::to('assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js') }}" type="text/javascript"></script>
+            <script src="{{ URL::to('assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js') }}" type="text/javascript"></script>
+            <!-- BEGIN:File Upload Plugin JS files-->
+            <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js') }}"></script>
+            <!-- The Templates plugin is included to render the upload/download listings -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js') }}"></script>
+            <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/vendor/load-image.min.js') }}"></script>
+            <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js') }}"></script>
+            <!-- blueimp Gallery script -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js') }}"></script>
+            <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js') }}"></script>
+            <!-- The basic File Upload plugin -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload.js') }}"></script>
+            <!-- The File Upload processing plugin -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js') }}"></script>
+            <!-- The File Upload image preview & resize plugin -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js') }}"></script>
+            <!-- The File Upload audio preview plugin -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js') }}"></script>
+            <!-- The File Upload video preview plugin -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js') }}"></script>
+            <!-- The File Upload validation plugin -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js') }}"></script>
+            <!-- The File Upload user interface plugin -->
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js') }}"></script>
+            <!-- Pace Plugin -->
+            <script src="{{ URL::to('assets/global/plugins/pace/pace.min.js') }}"></script>
+            <script type="text/javascript" src="{{ URL::to('assets/global/plugins/bootstrap-toastr/toastr.min.js') }}"></script>
+            <!-- The main application script -->
+            <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
+            <!--[if (gte IE 8)&(lt IE 10)]>
+            <script src="{{ URL::to('assets/global/plugins/jquery-file-upload/js/cors/jquery.xdr-transport.js') }}"></script>
+            <![endif]-->
+            <!-- END:File Upload Plugin JS files-->
+            <!-- END: Page level plugins -->
+            <script>
+                $(document).ready(function() {
+                    var url = "{{ route('admin.imap.getMails') }}";
+                    var token = "{{ csrf_token() }}";
+                    var baseUrl = "http://server/ameen/public/imap/";
+                    var data = {
+                        _token: token
+                    };
+                    $.ajax({
+                        type: "GET",
+                        url: url,
+                        dataType: "JSON",
+                        data: data,
+                        success: function (data) {
+                            console.log(data);
+                            $.each(data, function (key, value) {
+                                $("#ajaxMessages tbody").append(
+                                    '<tr class="unread" data-messageid="' + value.id + '">' +
+                                        '<td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>' +
+                                        '<td class="inbox-small-cells"><i class="fa fa-star"></i></td>' +
+                                        '<td class="view-message hidden-xs"><a href="' + baseUrl + '/' + value.id + '">' + value.fromName + '</a></td>' +
+                                        '<td class="view-message"><a href="'+ baseUrl + value.id +'">'+ value.subject +'</a></td>' +
+                                        '<td class="view-message inbox-small-cells"><i class="fa fa-paperclip"></i></td>' +
+                                        '<td class="view-message text-right">'+ value.date +'</td>' +
+                                    '</tr>'
+                                )
+                            });
+                            $(".mail-checkbox").uniform();
+                            toastr.success("Email fetch succesfull. Total emails fetched: ", "SMS Sent");
+
+                            toastr.options = {
+                                "closeButton": true,
+                                "debug": false,
+                                "positionClass": "toast-top-right",
+                                "onclick": null,
+                                "showDuration": "1000",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            };
+                        },
+                        error: function (data) {
+                            console.log(data);
+                            toastr.error(data.responseText, "Email Fetch Failed");
+
+                            toastr.options = {
+                                "closeButton": true,
+                                "debug": false,
+                                "positionClass": "toast-top-right",
+                                "onclick": null,
+                                "showDuration": "1000",
+                                "hideDuration": "1000",
+                                "timeOut": "5000",
+                                "extendedTimeOut": "1000",
+                                "showEasing": "swing",
+                                "hideEasing": "linear",
+                                "showMethod": "fadeIn",
+                                "hideMethod": "fadeOut"
+                            };
+                        }
+                    });
                 });
-            });
-        </script>
+            </script>
 @endsection

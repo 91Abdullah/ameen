@@ -169,7 +169,7 @@ return [
         anlutro\LaravelSettings\ServiceProvider::class,
         Ixudra\Curl\CurlServiceProvider::class,
         Orchestra\Parser\XmlServiceProvider::class,
-        XmlResponse\XmlResponseServiceProvider::class,
+        PhanAn\Remote\RemoteServiceProvider::class,
         //
 
         /*

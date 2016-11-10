@@ -66,6 +66,20 @@ return [
             'engine' => null,
         ],
 
+        'asterisk' => [
+            'driver' => 'mysql',
+            'host' => '192.168.8.206',
+            'port' => '3306',
+            'database' => 'asteriskcdrdb',
+            'username' => 'root',
+            'password' => 'Root12',
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),
