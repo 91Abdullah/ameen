@@ -42,6 +42,7 @@
                             <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Date</th>
                                 <th>Sender</th>
                                 <th>Reciever</th>
                                 <th>Message</th>
@@ -52,6 +53,7 @@
                                 @foreach($smessages as $index => $message)
                                     <tr>
                                         <td>{{ $message->id }}</td>
+                                        <td>{{ $message->created_at->diffForHumans() }}</td>
                                         <td>{{ $message->sender }}</td>
                                         <td>{{ $message->reciever }}</td>
                                         <td>{{ $message->message }}</td>
