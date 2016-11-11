@@ -268,7 +268,7 @@
                                 )
                             });
                             $(".mail-checkbox").uniform();
-                            toastr.success("Email fetch succesfull. Total emails fetched: ", "SMS Sent");
+                            toastr.success("Email fetch successful. Total emails fetched: " + data.length, "Emails");
 
                             toastr.options = {
                                 "closeButton": true,

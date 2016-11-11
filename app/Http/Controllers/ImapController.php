@@ -64,8 +64,8 @@ class ImapController extends Controller
         $mailbox = new ImapMailbox('{mail.ocs.com.pk:993/imap/ssl/novalidate-cert}INBOX', 'feedback.view@ocs.com.pk', 'ocs123+');
         $mail = $mailbox->getMail($id);
         $mailbox->setAttachmentsDir(public_path('attachments'));
-        //return view('admin.imap.view', ['message' => $mail]);
-        return dd($mail->getAttachments());
+        return view('admin.imap.view', ['message' => $mail]);
+        //return dd($mail->getAttachments());
     }
 
     public function downloadFile($filename)

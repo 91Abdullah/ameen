@@ -79,7 +79,7 @@
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
     <div class="page-footer-inner">
-        2016 &copy; Abdullah Basit
+        2016 &copy; M&P Courier.Logistics.COD.
     </div>
     <div class="scroll-to-top">
         <i class="icon-arrow-up"></i>
