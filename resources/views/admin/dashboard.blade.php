@@ -38,7 +38,7 @@
                             {{ $calls }}
                         </div>
                         <div class="desc">
-                            Total Calls
+                            Total Voicemails
                         </div>
                     </div>
                     <a class="more" href="{{ route('admin.calls') }}">

@@ -159,14 +159,13 @@
                                     </div>
                                 </th>
                                 <th class="pagination-control" colspan="3">
-                        <span class="pagination-info">
-                        1-30 of 789 </span>
+                                    {{--<span class="pagination-info">1-30 of 789 </span>
                                     <a class="btn btn-sm blue">
                                         <i class="fa fa-angle-left"></i>
                                     </a>
                                     <a class="btn btn-sm blue">
                                         <i class="fa fa-angle-right"></i>
-                                    </a>
+                                    </a>--}}
                                 </th>
                             </tr>
                             {{--<tr class="unread" data-messageid="">
@@ -262,7 +261,7 @@
                                         '<td class="inbox-small-cells"><i class="fa fa-star"></i></td>' +
                                         '<td class="view-message hidden-xs"><a href="' + baseUrl + '/' + value.id + '">' + value.fromName + '</a></td>' +
                                         '<td class="view-message"><a href="'+ baseUrl + value.id +'">'+ value.subject +'</a></td>' +
-                                        '<td class="view-message inbox-small-cells"><i class="fa fa-paperclip"></i></td>' +
+                                        '<td class="view-message inbox-small-cells"></td>' +
                                         '<td class="view-message text-right">'+ value.date +'</td>' +
                                     '</tr>'
                                 )

@@ -15,8 +15,9 @@ class DashboardController extends Controller
     {
         $rmessages = TextMessage::where("type", "=", "Incoming")->count();
         $smessages = TextMessage::where("type", "=", "Outgoing")->count();
-        //$mailbox = new ImapMailbox('{mail.ocs.com.pk:993/imap/ssl/novalidate-cert}INBOX', 'customer.first@ocs.com.pk', 'ocs123+');
-        $mails = 11;
+        $mailbox = new ImapMailbox('{mail.ocs.com.pk:993/imap/ssl/novalidate-cert}INBOX', 'feedback.view@ocs.com.pk', 'ocs123+');
+        //$mails = 11;
+        $mails = $mailbox->countMails();
         $calls = Cdr::where('lastapp', '=', 'VoiceMail')->count();
         return view('admin.dashboard', compact('rmessages', 'smessages', 'mails', 'calls'));
     }

@@ -36,7 +36,7 @@
                 </form>
                 <!-- END RESPONSIVE QUICK SEARCH FORM -->
             </li>
-            <li class="start {{ Request::is('/') ? 'active' : '' }}">
+            <li class="start {{ Request::is('dashboard') ? 'active' : '' }}">
                 <a href="{{ route('admin.dashboard') }}">
                     <i class="icon-speedometer"></i>
                     <span class="title">Dashboard</span>

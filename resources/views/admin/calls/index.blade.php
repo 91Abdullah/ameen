@@ -39,7 +39,7 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>UniqueId</th>
                                     <th>Call Date</th>
                                     <th>Source</th>
                                     <th>Destination</th>
