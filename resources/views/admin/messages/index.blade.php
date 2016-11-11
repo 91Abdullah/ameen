@@ -62,6 +62,8 @@
                                                 <span class="label label-info label-sm">Pending</span>
                                             @elseif($message->status == "deliveredtohandset" || $message->status == "deliveredtonetwork")
                                                 <span class="label label-success label-sm">Delivered</span>
+                                            @elseif($message->status == "deliveredincoming")
+                                                <span class="label label-success label-sm">Recieved</span>
                                             @else
                                                 <span class="label label-danger label-sm">Failed</span>
                                             @endif
