@@ -2,6 +2,7 @@
 
 use App\TextMessage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::get('/message', function(Request $request) {
     $message->message_id = $message->id;
     $message->update();
     if($message) {
+        //return response()->xml(['status' => 'success']);
         return response()->xml(['status' => 'success']);
     }
     else {

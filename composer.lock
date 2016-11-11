@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6f417f8e8af3256f876dffd1d153125b",
-    "content-hash": "9b23f3d26a3ede09ebb3ee3b6811f1ea",
+    "hash": "635a6e95b8d00f2462c55e48f7161e3d",
+    "content-hash": "c94b3ba34d9336db96b1d8a163552c7b",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -414,42 +414,6 @@
                 "laravel"
             ],
             "time": "2016-11-02 09:29:36"
-        },
-        {
-            "name": "jailtonsc/laravel-response-xml",
-            "version": "v1.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jailtonsc/laravel-response-xml.git",
-                "reference": "61bfd8c96b3276b9efaa12291661b9d682ad6d8e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jailtonsc/laravel-response-xml/zipball/61bfd8c96b3276b9efaa12291661b9d682ad6d8e",
-                "reference": "61bfd8c96b3276b9efaa12291661b9d682ad6d8e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "XmlResponse\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Add the method xml integrating the laravel's response, converting eloquent return to XML.",
-            "keywords": [
-                "eloquent",
-                "laravel",
-                "response",
-                "xml"
-            ],
-            "time": "2016-09-19 17:37:59"
         },
         {
             "name": "jakub-onderka/php-console-color",
