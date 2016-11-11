@@ -50,7 +50,7 @@ class ImapController extends Controller
                     $obj->date = (new Carbon($obj->date))->diffForHumans();
                 }
 
-                return response()->json($mail, 200);
+                return response()->json(array_reverse($mail), 200);
             }
             else
                 return response()->json('Error fetching mails. Please try again later.', 404);

@@ -42,7 +42,6 @@
                                     <th>UniqueId</th>
                                     <th>Call Date</th>
                                     <th>Source</th>
-                                    <th>Destination</th>
                                     <th>Disposition</th>
                                     <th>Duration (secs)</th>
                                     <th>Play</th>
@@ -54,7 +53,6 @@
                                         <td>{{ $cdr->uniqueid }}</td>
                                         <td>{{ \Carbon\Carbon::parse($cdr->calldate)->diffForHumans() }}</td>
                                         <td>{{ $cdr->src }}</td>
-                                        <td>{{ $cdr->dst }}</td>
                                         <td>
                                             @if ($cdr->disposition == "ANSWERED")
                                                 <span class="label label-success label-sm">{{ $cdr->disposition }}</span>
