@@ -40,7 +40,7 @@
     <link href="{{ URL::to('assets/admin/layout/css/custom.css') }}" rel="stylesheet" type="text/css"/>
     @yield('styles')
     <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="shortcut icon" href="{{ URL::to('assets/favicon.ico') }}"/>
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
