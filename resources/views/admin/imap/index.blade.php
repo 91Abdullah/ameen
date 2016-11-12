@@ -134,39 +134,14 @@
                     <div class="inbox-table">
                         <table id="ajaxMessages" class="table table-striped table-advance table-hover">
                             <tr>
-                                <th colspan="3">
+                                <th>
                                     <input type="checkbox" class="mail-checkbox mail-group-checkbox">
-                                    <div class="btn-group">
-                                        <a class="btn btn-sm blue dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-                                            More <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <i class="fa fa-pencil"></i> Mark as Read </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <i class="fa fa-ban"></i> Spam </a>
-                                            </li>
-                                            <li class="divider">
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;">
-                                                    <i class="fa fa-trash-o"></i> Delete </a>
-                                            </li>
-                                        </ul>
-                                    </div>
                                 </th>
-                                <th class="pagination-control" colspan="3">
-                                    {{--<span class="pagination-info">1-30 of 789 </span>
-                                    <a class="btn btn-sm blue">
-                                        <i class="fa fa-angle-left"></i>
-                                    </a>
-                                    <a class="btn btn-sm blue">
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>--}}
-                                </th>
+                                <th></th>
+                                <th>From</th>
+                                <th>Subject</th>
+                                <th></th>
+                                <th>Time</th>
                             </tr>
                             {{--<tr class="unread" data-messageid="">
                                 <td class="inbox-small-cells">
@@ -243,7 +218,7 @@
                 $(document).ready(function() {
                     var url = "{{ route('admin.imap.getMails') }}";
                     var token = "{{ csrf_token() }}";
-                    var baseUrl = "http://server/ameen/public/imap/";
+                    var baseUrl = "{{ url("/imap") }}";
                     var data = {
                         _token: token
                     };
@@ -259,8 +234,8 @@
                                     '<tr class="unread" data-messageid="' + value.id + '">' +
                                         '<td class="inbox-small-cells"><input type="checkbox" class="mail-checkbox"></td>' +
                                         '<td class="inbox-small-cells"><i class="fa fa-star"></i></td>' +
-                                        '<td class="view-message hidden-xs"><a href="' + baseUrl + '/' + value.id + '">' + value.fromName + '</a></td>' +
-                                        '<td class="view-message"><a href="'+ baseUrl + value.id +'">'+ value.subject +'</a></td>' +
+                                        '<td class="view-message hidden-xs"><a href="' + baseUrl + "/" + value.id + '">' + value.fromName + '</a></td>' +
+                                        '<td class="view-message"><a href="'+ baseUrl + "/" + value.id +'">'+ value.subject +'</a></td>' +
                                         '<td class="view-message inbox-small-cells"></td>' +
                                         '<td class="view-message text-right">'+ value.date +'</td>' +
                                     '</tr>'
