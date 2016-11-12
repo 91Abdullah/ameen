@@ -15,6 +15,7 @@ use Ixudra\Curl\Facades\Curl;
 
 Route::get('/', ['as' => 'admin.login', 'uses' => 'LoginController@index']);
 Route::post('/login', ['as' => 'admin.login.auth', 'uses' => 'LoginController@authenticate']);
+Route::get('/login', ['as' => 'admin.login.check', 'uses' => 'LoginController@index']);
 
 Route::get('/test/apiTest', function() {
     $response = Curl::to("http://server/ameen/public/api/message")
