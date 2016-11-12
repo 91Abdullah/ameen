@@ -50,6 +50,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <div class="menu-toggler sidebar-toggler">
 </div>
 <!-- END SIDEBAR TOGGLER BUTTON -->
+<h1 style="text-align: center; font-weight: bold; color: #5A5A5D; font-size: 50px;">Customer First Portal</h1>
 <!-- BEGIN LOGO -->
 <div class="logo">
     <a href="">
