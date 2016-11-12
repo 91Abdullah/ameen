@@ -63,7 +63,9 @@
                                         <td>{{ $cdr->duration }}</td>
                                         <td>
                                             @if ($cdr->recordingfile)
-                                                <a class="recording-link" data-date="{{ $cdr->calldate }}" data-id="{{ $cdr->uniqueid }}" data-recording="{{ $cdr->recordingfile }}"><i class="fa fa-play-circle-o fa-2x"></i></a>
+                                                <a class="recording-link btn btn-xs btn-primary" data-date="{{ $cdr->calldate }}" data-id="{{ $cdr->uniqueid }}" data-recording="{{ $cdr->recordingfile }}">
+                                                    <i class="fa fa-play"></i> Load
+                                                </a>
                                             @endif
                                         </td>
                                     </tr>
@@ -95,7 +97,8 @@
                 },
                 success: function (data) {
                     console.log(data);
-                    em.replaceWith("<audio controls><source src='"+ data +"' type='audio/wav'>Your browser does not support the audio element.</audio>")
+                    var audioEm = "<audio controls><source src='"+ data +"' type='audio/wav'>Your browser does not support the audio element.</audio>";
+                    em.replaceWith(audioEm);
                 },
                 error: function (data) {
                     console.log(data);
