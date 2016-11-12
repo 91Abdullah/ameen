@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    @include('admin.includes.quicksidebar')
+
 
 </div>
 <!-- END CONTAINER -->
